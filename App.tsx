@@ -9,7 +9,7 @@ const App = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsShowSplash(false)
-    }, 1500);
+    }, 2000);
     return () => clearTimeout(timeout)
   }, [])
   return (
@@ -19,7 +19,7 @@ const App = () => {
       backgroundColor="transparent"
       translucent />
   {
-    !isShowSplash ? (<SplashScreen />) : (<NavigationContainer>
+    isShowSplash ? (<SplashScreen />) : (<NavigationContainer>
       <AuthNavigator />
     </NavigationContainer>)
   }

@@ -1,9 +1,8 @@
-import { View, Text, ImageBackground, ActivityIndicator } from 'react-native'
-import React from 'react'
-import { Image } from 'react-native-reanimated/lib/typescript/Animated'
-import { appInfo } from "../constants/appInfo";
+import React from 'react';
+import { ActivityIndicator, Image, ImageBackground } from 'react-native';
 import { SpaceComponent } from '../components';
 import { appColors } from '../constants/appColors';
+import { appInfo } from '../constants/appInfo';
 
 const SplashScreen = () => {
   return (
@@ -15,15 +14,14 @@ const SplashScreen = () => {
         alignItems: 'center',
       }}
       imageStyle={{ flex: 1 }}>
-      <Image
-        source={require('../assets/image/splash-img.png')}
+      <Image source={require('../assets/image/splash.png')}
         style={{
           width: appInfo.sizes.WIDTH * 0.7,
           resizeMode: 'contain',
         }}
       />
-      <SpaceComponent height={20}/>
-      <ActivityIndicator color={appColors.gray} size={22}/>
+      <SpaceComponent height={10} />
+      <ActivityIndicator color={appColors.gray} size={30} />
     </ImageBackground>
   );
 };
