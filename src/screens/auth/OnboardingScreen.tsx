@@ -11,7 +11,7 @@ const OnboardingScreen = ({ navigation }: any) => {
         <View style={[globalStyle.container]}>
             <Swiper style={{}} loop={false} onIndexChanged={num => setIndex(num)}
                 index={index}
-                activeDotColor={appColors.primary}>
+                activeDotColor={appColors.white}>
                 <Image source={require('../../assets/image/onboarding-1.png')}
                     style={{
                         flex: 1,
@@ -63,7 +63,7 @@ export default OnboardingScreen
 
 const styles = StyleSheet.create({
     text: {
-        color: appColors.primary,
+        color: appColors.white,
         fontSize: 20,
         fontWeight: '500',
     }
