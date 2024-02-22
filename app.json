@@ -1,4 +1,11 @@
 {
   "name": "keppchat",
-  "displayName": "keppchat"
+  "displayName": "keppchat",
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "dd66da7e-bfb2-44f6-956b-24ea53c91634"
+      }
+    }
+  }
 }
