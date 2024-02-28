@@ -7,12 +7,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {ReactNode} from 'react';
-import {globalStyles} from '../styles/globalStyles';
 import {useNavigation} from '@react-navigation/native';
 import {ButtonComponent, RowComponent, TextComponent} from '.';
 import {ArrowLeft} from 'iconsax-react-native';
 import {appColors} from '../constants/appColors';
 import {fontFamilies} from '../constants/fontFamilies';
+import { globalStyles } from '../styles/globalStyle';
 
 interface Props {
   isImageBackground?: boolean;
@@ -73,7 +73,7 @@ const ContainerComponent = (props: Props) => {
 
   return isImageBackground ? (
     <ImageBackground
-      source={require('../assets/images/splash-img.png')}
+      source={require('../assets/images/background.png')}
       style={{flex: 1}}
       imageStyle={{flex: 1}}>
       <SafeAreaView style={{flex: 1}}>{headerComponent()}</SafeAreaView>

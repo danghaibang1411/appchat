@@ -1,11 +1,7 @@
 import {Lock, Sms} from 'iconsax-react-native';
 import React, {useEffect, useState} from 'react';
 import {Alert, Image, Switch} from 'react-native';
-import authenticationAPI from '../../apis/authApi';
 import {appColors} from '../../constants/appColors';
-import {Validate} from '../../utils/validate';
-import {useDispatch} from 'react-redux';
-import {addAuth} from '../../redux/reducers/authReducer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ContainerComponent from '../../components/ContainerComponent';
 import SectionComponent from '../../components/SectionComponent';
@@ -14,48 +10,13 @@ import InputComponent from '../../components/InputComponent';
 import SpaceComponent from '../../components/SpaceComponent';
 import RowComponent from '../../components/RowComponent';
 import ButtonComponent from '../../components/ButtonComponent';
+import SocialLogin from './components/SocialLogin';
 
 const LoginScreen = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isRemember, setIsRemember] = useState(true);
   const [isDisable, setIsDisable] = useState(true);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const emailValidation = Validate.email(email);
-
-    if (!email || !password || !emailValidation) {
-      setIsDisable(true);
-    } else {
-      setIsDisable(false);
-    }
-  }, [email, password]);
-
-  const handleLogin = async () => {
-    const emailValidation = Validate.email(email);
-    if (emailValidation) {
-      try {
-        const res = await authenticationAPI.HandleAuthentication(
-          '/login',
-          {email, password},
-          'post',
-        );
-
-        dispatch(addAuth(res.data));
-
-        await AsyncStorage.setItem(
-          'auth',
-          isRemember ? JSON.stringify(res.data) : email,
-        );
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      Alert.alert('Email is not correct!!!!');
-    }
-  };
 
   return (
     <ContainerComponent isImageBackground isScroll>
@@ -66,9 +27,9 @@ const LoginScreen = ({navigation}: any) => {
           marginTop: 75,
         }}>
         <Image
-          source={require('../../assets/images/text-logo.png')}
+          source={require('../../assets/images/splash.png')}
           style={{
-            width: 162,
+            width: 114,
             height: 114,
             marginBottom: 30,
           }}
@@ -114,7 +75,6 @@ const LoginScreen = ({navigation}: any) => {
       <SectionComponent>
         <ButtonComponent
           disable={isDisable}
-          onPress={handleLogin}
           text="SIGN IN"
           type="primary"
         />
