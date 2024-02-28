@@ -29,8 +29,8 @@ const LoginScreen = ({navigation}: any) => {
         <Image
           source={require('../../assets/images/splash.png')}
           style={{
-            width: 114,
-            height: 114,
+            width: 120,
+            height: 120,
             marginBottom: 30,
           }}
         />

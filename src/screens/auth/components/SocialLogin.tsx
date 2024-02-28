@@ -30,7 +30,6 @@ const SocialLogin = () => {
 
       <ButtonComponent
         type="primary"
-        onPress={handleLoginWithGoogle}
         color={appColors.white}
         textColor={appColors.text}
         text="Login with Google"
@@ -45,11 +44,9 @@ const SocialLogin = () => {
         textColor={appColors.text}
         text="Login with Facebook"
         textFont={fontFamilies.regular}
-        onPress={handleLoginWithFacebook}
         iconFlex="left"
         icon={<Facebook />}
       />
-      <LoadingModal visible={isLoading} />
     </SectionComponent>
   );
 };
