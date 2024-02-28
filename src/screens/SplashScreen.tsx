@@ -7,14 +7,14 @@ import { appInfo } from '../constants/appInfo';
 const SplashScreen = () => {
   return (
     <ImageBackground
-      source={require('../assets/image/background.png')}
+      source={require('../assets/images/background.png')}
       style={{
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
       }}
       imageStyle={{ flex: 1 }}>
-      <Image source={require('../assets/image/splash.png')}
+      <Image source={require('../assets/images/splash.png')}
         style={{
           width: appInfo.sizes.WIDTH * 0.7,
           resizeMode: 'contain',
